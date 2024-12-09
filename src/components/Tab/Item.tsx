@@ -1,6 +1,8 @@
-import { FC } from "react";
-import styles from "./tab.module.css";
-import { TabType } from "@/types/tab";
+import { FC } from 'react';
+
+import { TabType } from '@/types/tab';
+
+import styles from './tab.module.css';
 
 interface Props {
   id: TabType;
@@ -9,22 +11,14 @@ interface Props {
   currentTabId: string;
 }
 
-const Item: FC<Props> = ({
-  id,
-  name,
-  onChange,
-  currentTabId,
-}) => {
+const Item: FC<Props> = ({ id, name, onChange, currentTabId }) => {
   return (
-    <label
-      className={styles.item}
-    >
+    <label className={styles.item}>
       <input
+        className={styles.input}
         type="radio"
         name="drinkTypeTab"
-        checked={
-          currentTabId === id
-        }
+        checked={currentTabId === id}
         onChange={onChange}
       />
       {name}

@@ -3,5 +3,4 @@ export type TabItem = {
   name: string;
 };
 
-export type TabType =
-  TabItem["id"];
+export type TabType = TabItem['id'];

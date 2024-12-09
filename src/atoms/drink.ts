@@ -1,7 +1,5 @@
-import { DrinkDetail } from "@/types/common";
-import { atom } from "jotai";
+import { atom } from 'jotai';
 
-export const drinkAtom =
-  atom<DrinkDetail | null>(
-    null
-  );
+import { DrinkDetail } from '@/types/common';
+
+export const drinkAtom = atom<DrinkDetail | null>(null);

@@ -8,9 +8,9 @@
     font-size: 14px;
     line-height: 1.6;
     .key {
-      padding: 8px;
       flex-shrink: 0;
       width: 60px;
+      padding: 8px;
       font-weight: bold;
     }
 

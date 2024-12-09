@@ -1,5 +1,6 @@
-import MenuDetailContainer from "@/containers/(menu)/[drinkType]/[id]";
-import { FC } from "react";
+import { FC } from 'react';
+
+import MenuDetailContainer from '@/containers/(menu)/[drinkType]/[id]';
 
 interface Props {
   params: Promise<{
@@ -8,14 +9,8 @@ interface Props {
   }>;
 }
 
-const MenuDetailPage: FC<
-  Props
-> = async ({ params }) => {
-  return (
-    <MenuDetailContainer
-      params={await params}
-    />
-  );
+const MenuDetailPage: FC<Props> = async ({ params }) => {
+  return <MenuDetailContainer params={await params} />;
 };
 
 export default MenuDetailPage;

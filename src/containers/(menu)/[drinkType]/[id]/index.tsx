@@ -1,15 +1,19 @@
 'use client';
+import { FC, useEffect } from 'react';
+
+import { useRouter } from 'next/navigation';
+
+import { useAtom } from 'jotai';
+import { IoIosArrowBack } from 'react-icons/io';
+
 import { drinkAtom } from '@/atoms/drink';
 import MenuItemDetail from '@/components/MenuItemDetail';
 import { COCKTAILS } from '@/data/cocktail';
 import { ETCS } from '@/data/etc';
 import { WHISKYS } from '@/data/whisky';
 import { DrinkDetail } from '@/types/common';
-import { useAtom } from 'jotai';
-import { useRouter } from 'next/navigation';
-import { FC, useEffect } from 'react';
+
 import styles from './itemDetail.module.css';
-import { IoIosArrowBack } from 'react-icons/io';
 
 interface Props {
   params: {
@@ -41,6 +45,7 @@ const MenuDetailContainer: FC<Props> = ({ params }) => {
       ].filter((value) => value.id === params.id);
       setDrinkDetail(item);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [drinkDetail]);
 
   if (drinkDetail === null) {

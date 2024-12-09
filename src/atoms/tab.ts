@@ -1,5 +1,3 @@
-import { atom } from "jotai";
+import { atom } from 'jotai';
 
-export const tabIdAtom = atom(
-  "cocktail"
-);
+export const tabIdAtom = atom('cocktail');

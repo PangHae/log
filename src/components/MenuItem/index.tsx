@@ -1,11 +1,15 @@
 'use client';
-import Link from 'next/link';
 import { FC } from 'react';
-import styles from './menuItem.module.css';
-import { type DrinkDetail } from '@/types/common';
+
+import Link from 'next/link';
+
 import { useAtomValue } from 'jotai';
-import { tabIdAtom } from '@/atoms/tab';
 import { IoIosArrowForward } from 'react-icons/io';
+
+import { tabIdAtom } from '@/atoms/tab';
+import { type DrinkDetail } from '@/types/common';
+
+import styles from './menuItem.module.css';
 
 interface Props {
   detail: DrinkDetail;

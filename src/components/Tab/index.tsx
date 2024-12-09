@@ -1,40 +1,25 @@
-"use client";
-import { FC } from "react";
-import Item from "./Item";
-import styles from "./tab.module.css";
-import {
-  TabType,
-  type TabItem,
-} from "@/types/tab";
+'use client';
+import { FC } from 'react';
+
+import { TabType, type TabItem } from '@/types/tab';
+
+import Item from './Item';
+import styles from './tab.module.css';
 
 interface Props {
   tabs: TabItem[];
-  onChange: (
-    id: TabType
-  ) => void;
+  onChange: (id: TabType) => void;
   currentTabId: string;
 }
 
-const Tab: FC<Props> = ({
-  tabs,
-  onChange,
-  currentTabId,
-}) => {
+const Tab: FC<Props> = ({ tabs, onChange, currentTabId }) => {
   return (
-    <section
-      className={
-        styles.tabWrapper
-      }
-    >
+    <section className={styles.tabWrapper}>
       {tabs.map((item) => (
         <Item
           key={item.id}
-          onChange={() =>
-            onChange(item.id)
-          }
-          currentTabId={
-            currentTabId
-          }
+          onChange={() => onChange(item.id)}
+          currentTabId={currentTabId}
           {...item}
         />
       ))}

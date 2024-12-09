@@ -1,13 +1,15 @@
-import { DrinkDetail } from '@/types/common';
-import Image from 'next/image';
 import { FC } from 'react';
-import Information from '../Information';
-import Button from '../Button';
-import BottomFixed from '../layout/BottomFixed';
-import { IoIosBasket } from 'react-icons/io';
-import { IoIosCheckmarkCircle } from 'react-icons/io';
 
+import Image from 'next/image';
+
+import { IoIosBasket, IoIosCheckmarkCircle } from 'react-icons/io';
+
+import { DrinkDetail } from '@/types/common';
+
+import Button from '../Button';
+import Information from '../Information';
 import styles from './menuItemDetail.module.css';
+import BottomFixed from '../layout/BottomFixed';
 
 interface Props {
   drinkDetail: DrinkDetail;
