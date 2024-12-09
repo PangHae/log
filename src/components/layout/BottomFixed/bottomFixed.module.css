@@ -1,4 +1,4 @@
-.bottomStickyContainer {
+.bottomFixedContainer {
   position: fixed;
   bottom: 0px;
   display: flex;
