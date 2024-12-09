@@ -1,0 +1,8 @@
+.menuItemDetailContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 1;
+  padding: 12px;
+  padding-top: 0;
+}

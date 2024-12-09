@@ -1,0 +1,14 @@
+.item {
+  display: flex;
+  padding: 8px 12px;
+  width: 100%;
+  height: 2.8rem;
+  align-items: center;
+
+  .body {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+}
