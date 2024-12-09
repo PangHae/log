@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { FC } from 'react';
 import Information from '../Information';
 import Button from '../Button';
-import BottomSticky from '../layout/BottomSticky';
+import BottomFixed from '../layout/BottomFixed';
 import { IoIosBasket } from 'react-icons/io';
 import { IoIosCheckmarkCircle } from 'react-icons/io';
 
@@ -27,7 +27,7 @@ const MenuItemDetail: FC<Props> = ({ drinkDetail }) => {
         alcoholDegree={drinkDetail.alcoholDegree}
         recipe={drinkDetail.recipe || ''}
       />
-      <BottomSticky>
+      <BottomFixed>
         <Button>
           <IoIosBasket size={14} />
           장바구니
@@ -36,7 +36,7 @@ const MenuItemDetail: FC<Props> = ({ drinkDetail }) => {
           <IoIosCheckmarkCircle size={14} />
           주문하기
         </Button>
-      </BottomSticky>
+      </BottomFixed>
     </section>
   );
 };
