@@ -1,10 +1,12 @@
 import localFont from 'next/font/local';
 
+import { SpeedInsights } from '@vercel/speed-insights/next';
+
 import type { Metadata } from 'next';
 
-import '@/styles/reset.css';
 import '@/styles/constants/_colors.css';
 import '@/styles/globals.css';
+import '@/styles/reset.css';
 
 const geistSans = localFont({
   src: './fonts/GeistVF.woff',
@@ -31,6 +33,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         {children}
+        <SpeedInsights />
       </body>
     </html>
   );
