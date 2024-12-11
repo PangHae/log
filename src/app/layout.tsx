@@ -1,5 +1,6 @@
 import localFont from 'next/font/local';
 
+import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 
 import type { Metadata } from 'next';
@@ -34,6 +35,7 @@ export default function RootLayout({
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         {children}
         <SpeedInsights />
+        <Analytics />
       </body>
     </html>
   );
