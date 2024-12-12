@@ -1,6 +1,6 @@
 import { FC } from 'react';
 
-import styles from './information.module.css';
+import styles from './information.module.scss';
 
 interface Props {
   description: string;

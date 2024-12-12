@@ -8,7 +8,7 @@ import { DrinkDetail } from '@/types/common';
 
 import Button from '../Button';
 import Information from '../Information';
-import styles from './menuItemDetail.module.css';
+import styles from './menuItemDetail.module.scss';
 import BottomFixed from '../layout/BottomFixed';
 
 interface Props {

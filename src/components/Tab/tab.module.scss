@@ -27,6 +27,7 @@
     height: 100%;
     background-color: white;
     border-bottom: 1px solid white;
+
     &:has(input[type='radio']:checked) {
       border-bottom: 1px solid black;
     }

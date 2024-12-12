@@ -1,0 +1,20 @@
+@use 'constants/colors' as c;
+
+.button {
+  display: flex;
+  flex: 1 1 0;
+  gap: 5px;
+  align-items: center;
+  justify-content: center;
+  min-width: 150px;
+  height: 46px;
+  color: c.$color-black;
+  background-color: c.$color-gray-8;
+  border: 1px solid c.$color-gray-5;
+  border-radius: 8px;
+}
+
+.main {
+  color: c.$color-white;
+  background-color: c.$color-blue-0;
+}

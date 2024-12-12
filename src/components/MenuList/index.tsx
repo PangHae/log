@@ -7,7 +7,7 @@ import { DrinkDetail } from '@/types/common';
 import { TabType } from '@/types/tab';
 
 import MenuItem from '../MenuItem';
-import styles from './menuList.module.css';
+import styles from './menuList.module.scss';
 
 interface Props {
   currentTabId: TabType;

@@ -9,7 +9,7 @@ import { IoIosArrowForward } from 'react-icons/io';
 import { tabIdAtom } from '@/atoms/tab';
 import { type DrinkDetail } from '@/types/common';
 
-import styles from './menuItem.module.css';
+import styles from './menuItem.module.scss';
 
 interface Props {
   detail: DrinkDetail;

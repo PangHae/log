@@ -10,7 +10,7 @@ import { TABS } from '@/data/tab';
 import { DrinkDetail } from '@/types/common';
 import { TabType } from '@/types/tab';
 
-import styles from './menu.module.css';
+import styles from './menu.module.scss';
 
 const Menu = () => {
   const [currentTabId, setCurrentTabId] = useAtom(tabIdAtom);

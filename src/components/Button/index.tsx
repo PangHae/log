@@ -2,7 +2,7 @@ import { ComponentProps, FC, ReactNode } from 'react';
 
 import cx from 'clsx';
 
-import styles from './button.module.css';
+import styles from './button.module.scss';
 
 interface Props extends ComponentProps<'button'> {
   children: ReactNode;

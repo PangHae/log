@@ -13,7 +13,7 @@ import { ETCS } from '@/data/etc';
 import { WHISKYS } from '@/data/whisky';
 import { DrinkDetail } from '@/types/common';
 
-import styles from './itemDetail.module.css';
+import styles from './itemDetail.module.scss';
 
 interface Props {
   params: {

@@ -2,7 +2,7 @@ import { FC } from 'react';
 
 import { TabType } from '@/types/tab';
 
-import styles from './tab.module.css';
+import styles from './tab.module.scss';
 
 interface Props {
   id: TabType;

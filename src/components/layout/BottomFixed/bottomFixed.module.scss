@@ -1,11 +1,13 @@
+@use 'constants/colors' as c;
+
 .bottomFixedContainer {
   position: fixed;
-  bottom: 0px;
+  bottom: 0;
   display: flex;
   gap: 12px;
   width: 100%;
   height: auto;
   padding: 12px;
   background-color: white;
-  border-top: var(--color-gray-0);
+  border-top: c.$color-gray-0;
 }

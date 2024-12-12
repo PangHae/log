@@ -4,7 +4,7 @@ import { FC } from 'react';
 import { TabType, type TabItem } from '@/types/tab';
 
 import Item from './Item';
-import styles from './tab.module.css';
+import styles from './tab.module.scss';
 
 interface Props {
   tabs: TabItem[];
