@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint --fix",
-    "lint:style": "stylelint --fix **/*.css",
+    "lint:style": "stylelint --fix **/*.scss",
     "prepare": "husky"
   },
   "dependencies": {
@@ -18,12 +18,13 @@
     "next": "15.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-icons": "^5.4.0"
+    "react-icons": "^5.4.0",
+    "sass": "^1.82.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.6.0",
     "@commitlint/config-conventional": "^19.6.0",
-    "@types/node": "^20",
+    "@types/node": "^20.17.10",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "eslint": "^8",
@@ -45,7 +46,7 @@
       "prettier --write",
       "eslint --fix"
     ],
-    "*.css": [
+    "*.scss": [
       "npm run lint:style"
     ]
   }

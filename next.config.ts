@@ -1,17 +1,20 @@
-import type { NextConfig } from "next";
+import path from 'path';
 
-const nextConfig: NextConfig =
-  {
-    /* config options here */
-    images: {
-      remotePatterns: [
-        {
-          protocol: "https",
-          hostname:
-            "placehold.co",
-        },
-      ],
-    },
-  };
+import type { NextConfig } from 'next';
+
+const nextConfig: NextConfig = {
+  reactStrictMode: true,
+  sassOptions: {
+    includePaths: [path.join(__dirname, 'src/styles')],
+  },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'placehold.co',
+      },
+    ],
+  },
+};
 
 export default nextConfig;
