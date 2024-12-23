@@ -8,10 +8,7 @@ import { IoIosArrowBack } from 'react-icons/io';
 
 import { drinkAtom } from '@/atoms/drink';
 import MenuItemDetail from '@/components/MenuItemDetail';
-import { COCKTAILS } from '@/data/cocktail';
-import { ETCS } from '@/data/etc';
-import { WHISKYS } from '@/data/whisky';
-import { DrinkDetail } from '@/types/common';
+import { getDrinkDetailById } from '@/services/supabase/getDrinkDetailById';
 
 import styles from './itemDetail.module.scss';
 
@@ -22,17 +19,9 @@ interface Props {
   };
 }
 
-type DrinkTypeDataMap = Record<'cocktail' | 'whisky' | 'etc', DrinkDetail[]>;
-
 const MenuDetailContainer: FC<Props> = ({ params }) => {
   const router = useRouter();
   const [drinkDetail, setDrinkDetail] = useAtom(drinkAtom);
-
-  const drinkTypeDataMap: DrinkTypeDataMap = {
-    cocktail: COCKTAILS,
-    whisky: WHISKYS,
-    etc: ETCS,
-  };
 
   const handleClickClose = () => {
     router.back();
@@ -40,16 +29,25 @@ const MenuDetailContainer: FC<Props> = ({ params }) => {
 
   useEffect(() => {
     if (drinkDetail === null) {
-      const [item] = drinkTypeDataMap[
-        params.drinkType as keyof DrinkTypeDataMap
-      ].filter((value) => value.id === params.id);
-      setDrinkDetail(item);
+      (async () => {
+        const detail = await getDrinkDetailById(params.drinkType, params.id);
+        if (detail.length) {
+          setDrinkDetail(detail[0]);
+        } else {
+          setDrinkDetail({
+            id: '',
+            description: '',
+            alcoholDegree: 0,
+            name: '',
+          });
+        }
+      })();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [drinkDetail]);
+  }, []);
 
-  if (drinkDetail === null) {
-    return null;
+  if (!drinkDetail?.id) {
+    return <span>주류 정보를 찾을 수 없습니다. 초기 화면으로 돌아갑니다.</span>;
   }
 
   return (

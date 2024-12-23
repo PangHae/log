@@ -2,6 +2,7 @@
 import { FC } from 'react';
 
 import { useAtom, useSetAtom } from 'jotai';
+import { useHydrateAtoms } from 'jotai/utils';
 
 import { drinkAtom } from '@/atoms/drink';
 import { tabIdAtom } from '@/atoms/tab';
@@ -15,9 +16,13 @@ import styles from './menu.module.scss';
 
 interface Props {
   drinkTypes: TabItem[];
+  drinks: {
+    [key: TabType]: DrinkDetail[];
+  };
 }
 
-const Menu: FC<Props> = ({ drinkTypes }) => {
+const Menu: FC<Props> = ({ drinkTypes, drinks }) => {
+  useHydrateAtoms([[tabIdAtom, 'cocktail']]);
   const [currentTabId, setCurrentTabId] = useAtom(tabIdAtom);
   const setDrink = useSetAtom(drinkAtom);
 
@@ -29,6 +34,10 @@ const Menu: FC<Props> = ({ drinkTypes }) => {
     setDrink(value);
   };
 
+  if (!currentTabId) {
+    return null;
+  }
+
   return (
     <>
       <Header />
@@ -38,7 +47,11 @@ const Menu: FC<Props> = ({ drinkTypes }) => {
           currentTabId={currentTabId}
           onChange={onClickTab}
         />
-        <MenuList currentTabId={currentTabId} onClick={handleClickMenuItem} />
+        <MenuList
+          drinks={drinks}
+          currentTabId={currentTabId}
+          onClick={handleClickMenuItem}
+        />
       </main>
     </>
   );
